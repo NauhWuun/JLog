@@ -32,7 +32,7 @@ public enum LogVersion
 	VersionSERVICE_PACK(0x00001000), 
 	VersionDEBUG(0x00000100), 
 	VersionRELEASE(0x00000010),
-	VersionSTANDARD(0xFFFFFFFE);
+	VersionSTANDARD(0x00000001);
 
 	private int index;
     private static final LogVersion[] versionMap = new LogVersion[64];
@@ -44,7 +44,7 @@ public enum LogVersion
     }
 
     public static LogVersion of(int code) {
-        return versionMap[code & 0xff];
+        return versionMap[code & 0xffffffff];
     }
 
     LogVersion(int code) {
