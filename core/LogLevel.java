@@ -44,7 +44,7 @@ public enum LogLevel
     }
 
     public static LogLevel of(int code) {
-        return levelMap[code & 0xff];
+        return levelMap[code & 0xffffffff];
     }
 
     LogLevel(int code) {
