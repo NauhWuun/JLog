@@ -34,7 +34,28 @@ public enum LogVersion
 	VersionRELEASE(0x00000010),
 	VersionSTANDARD(0xFFFFFFFE);
 
-	LogVersion(int index) {
+	private int index;
+    private static final LogVersion[] versionMap = new LogVersion[64];
+	
+    static {
+        for (LogVersion maps : LogVersion.values()) {
+            versionMap[maps.code] = maps;
+        }
+    }
 
-	}
+    public static LogVersion of(int code) {
+        return versionMap[code & 0xff];
+    }
+
+    LogVersion(int code) {
+        this.code = code;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public int toByte() {
+        return code;
+    }
 }
