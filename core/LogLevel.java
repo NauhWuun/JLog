@@ -35,7 +35,7 @@ public enum LogLevel
     LogTERMINATED(0x10000000);
     
 	private int index;
-    private static final LogLevel[] levelMap = new LogLevel[256];
+    private static final LogLevel[] levelMap = new LogLevel[64];
 	
     static {
         for (LogLevel maps : LogLevel.values()) {
