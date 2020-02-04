@@ -6,10 +6,7 @@
 # Code Example
 
 <Code>
-    package core.samples;
-  
-    import core.Loger;
-
+ 
     class LoglogTest 
     {
         Loger logging = Loger.getInstance(LoglogTest.class);
