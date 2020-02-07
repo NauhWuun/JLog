@@ -31,8 +31,13 @@ import java.nio.file.StandardOpenOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-class Loglog extends LogException
+public class Loglog extends LogException
 {
+	/**
+	 *
+	 */
+	private static final long serialVersionUID = -9102570949445072576L;
+
 	private Mutex logging_mutex = new Mutex();
 	
     private static String logging_file_name = ".\\Logging.log";

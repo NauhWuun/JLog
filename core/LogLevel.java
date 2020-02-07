@@ -34,18 +34,18 @@ public enum LogLevel
 	LogFATAL(0x01000000), 
     LogTERMINATED(0x10000000);
     
-	private int index;
-    private static final LogLevel[] levelMap = new LogLevel[64];
-	
+    private static final LogLevel[] map = new LogLevel[256];
     static {
-        for (LogLevel maps : LogLevel.values()) {
-            levelMap[maps.code] = maps;
+        for (LogLevel tt : LogLevel.values()) {
+            map[tt.code] = tt;
         }
     }
 
-    public static LogLevel of(int code) {
-        return levelMap[code & 0xffffffff];
+    public static LogLevel of(byte code) {
+        return map[0xff & code];
     }
+
+    private int code;
 
     LogLevel(int code) {
         this.code = code;
@@ -55,7 +55,7 @@ public enum LogLevel
         return code;
     }
 
-    public int toByte() {
-        return code;
+    public byte toByte() {
+        return (byte) code;
     }
 }

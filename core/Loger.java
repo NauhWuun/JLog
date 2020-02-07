@@ -27,6 +27,11 @@ import java.io.IOException;
 
 public class Loger extends Loglog 
 {    
+    /**
+     *
+     */
+    private static final long serialVersionUID = 8144666293401324397L;
+
     public Loger(final String LogFile2Where, LogVersion version) throws IOException {
         super(LogFile2Where, version);
     }

@@ -32,20 +32,20 @@ public enum LogVersion
 	VersionSERVICE_PACK(0x00001000), 
 	VersionDEBUG(0x00000100), 
 	VersionRELEASE(0x00000010),
-	VersionSTANDARD(0x00000001);
+	VersionSTANDARD(0xFFFFFFFE);
 
-	private int index;
-    private static final LogVersion[] versionMap = new LogVersion[64];
-	
+	private static final LogVersion[] map = new LogVersion[256];
     static {
-        for (LogVersion maps : LogVersion.values()) {
-            versionMap[maps.code] = maps;
+        for (LogVersion tt : LogVersion.values()) {
+            map[tt.code] = tt;
         }
     }
 
-    public static LogVersion of(int code) {
-        return versionMap[code & 0xffffffff];
+    public static LogVersion of(byte code) {
+        return map[0xff & code];
     }
+
+    private int code;
 
     LogVersion(int code) {
         this.code = code;
@@ -55,7 +55,7 @@ public enum LogVersion
         return code;
     }
 
-    public int toByte() {
-        return code;
+    public byte toByte() {
+        return (byte) code;
     }
 }
