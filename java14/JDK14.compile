@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 java_bin=./jvm/bin/java
 
 # JVM options
-jvm_options=`${java_bin} -cp xxx.jar xxx.JvmOptions`
+jvm_options=`${java_bin} -cp xxx.jar xxx.JvmOptions
 
 # start kernel
 ${java_bin} ${jvm_options} -cp xxx.jar JLog.Main "$@"

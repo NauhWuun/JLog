@@ -1,4 +1,4 @@
-package org.Jlog;
+package org.NauhWuun.Jlog;
 
 import java.util.concurrent.locks.ReentrantLock;
 

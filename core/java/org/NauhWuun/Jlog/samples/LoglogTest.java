@@ -1,6 +1,6 @@
-package org.Jlog.samples;
+package org.NauhWuun.Jlog.samples;
 
-import org.Jlog.Loger;
+import org.NauhWuun.Jlog.Loger;
 
 class LoglogTest
 {

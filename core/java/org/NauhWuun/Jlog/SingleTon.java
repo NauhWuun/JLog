@@ -1,4 +1,4 @@
-package org.Jlog;
+package org.NauhWuun.Jlog;
 
 import java.io.Serializable;
 import java.util.concurrent.ConcurrentHashMap;

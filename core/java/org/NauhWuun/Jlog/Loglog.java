@@ -1,4 +1,4 @@
-package org.Jlog;
+package org.NauhWuun.Jlog;
 
 import java.io.File;
 import java.io.IOException;
@@ -132,7 +132,7 @@ public class Loglog extends LogException
 		try {
 			Files.writeString(path, ostring, StandardOpenOption.APPEND);
 		} catch(IOException e) {
-			this.toString();
+			e.getMessage();
 		}
 	}
 
@@ -143,8 +143,8 @@ public class Loglog extends LogException
     public final String HexData(final byte[] data) {
 		StringBuilder sb = new StringBuilder();
 
-		for(int i = 0; i < data.length; i++) {
-			sb.append(String.format("%02x", data[i]));
+		for (byte datum : data) {
+			sb.append(String.format("%02x", datum));
 		}
 
 		return sb.toString();
